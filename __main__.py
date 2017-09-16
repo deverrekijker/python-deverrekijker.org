@@ -34,8 +34,7 @@ def graph():
     # h*cking summer time adjustments
     # ????
     # not sure if this was resolved in the js/css graph either
-    # problems: - need to put the image neatly on a web page. scaling (adjust to screen), no padding
-    #           - ticks for date and hour of day
+    # problems: - ticks for date and hour of day
     #           - make sure the time shifting is all right
 
 
@@ -87,7 +86,7 @@ def graph():
         # ax.set_aspect('equal')
         fig.set_size_inches(30, 60, forward=True)
 
-        plt.savefig(img, format='png')
+        plt.savefig(img, format='png', bbox_inches='tight', pad_inches=0)
 
         img.seek(0)
 
