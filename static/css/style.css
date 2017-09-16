@@ -1,0 +1,185 @@
+h1 {
+  font-family: "Noto-Serif",Georgia,Baskerville,Palatino,"Palatino Linotype","Book Antiqua","Times New Roman",serif !important;
+  font-size: 69px !important;
+}
+
+h2 {
+  margin: 0 0 16px 0 !important;
+}
+
+h3 {
+  display: inline;
+}
+
+a {
+  cursor:pointer;
+  color: rgb(208, 68, 69) !important;
+}
+
+h1:after {
+  content: "\221E";
+  font-family: Consolas,Monaco,"Courier New",Courier,monospace,sans-serif;
+  margin-left: 12px;
+}
+
+li:before {
+  content: "\221E";
+  color: #FFF;
+  float: left;
+  margin: 8px 0 8px -8px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  li:before {
+    margin: 3px 8px 0 8px;
+  }
+
+  #header-left, #header-right {
+    width: 100%;
+  }
+
+  #header-left {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .left, .right {float: none !important;}
+
+  footer {text-align: center;}
+}
+
+@media (max-width: 992px) {
+  #header h1 {
+    font-size: 58px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding: 32px !important;
+  }
+}
+
+nav {
+  margin-bottom: 16px;
+}
+
+.navbar-nav > li {
+  padding-left: 20px;
+}
+
+html{
+ height:100%;
+ min-height:100%;
+ }
+
+#bitcoin-container {
+  float: none !important;
+}
+
+.blockchain-btn {
+  margin: 0 auto;
+  width: 442px;
+}
+
+.stage-begin {
+  text-align: center;
+  cursor: pointer;
+}
+
+body {
+  font-family: Consolas,Monaco,"Courier New",Courier,monospace,sans-serif !important;
+  background-size: cover;
+  background: rgb(252, 240, 240) url('../img/bg.jpg') no-repeat fixed center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height: 100%;
+  min-height:100%;
+  width: 100%;
+  position: absolute;
+}
+
+body > .container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  max-height: 100%;
+  max-width: 100%;
+}
+
+header > a, nav > a {
+  display: inline-block;
+}
+
+header h1 {
+  margin-top: 0;
+}
+
+/*footer {
+  width: 100%;
+  padding: 6px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}*/
+
+footer {padding-top: 32px;}
+
+#container {
+  background-color: rgba(252,240,240,0.96);
+}
+
+#open-text {
+  width: 100%;
+  padding: 16px;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#open-text h2 {
+  margin-bottom: 20px !important;
+}
+
+#open-text:hover, nav li:hover  {
+  opacity: 0.8;
+}
+
+#open-box {
+  float: right;
+  width: 100%;
+}
+
+#header-left {
+  display: inline-block;
+}
+
+#header-right, .right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+nav {
+  background-color: rgb(208, 68, 69) !important;
+  margin: 16px 0;
+  padding: 8px;
+}
+
+nav > a {
+  padding: 8px 32px 8px 0;
+}
+
+nav h3 {
+  color: white;
+}
+
+.navbar {
+  border: none !important;
+}

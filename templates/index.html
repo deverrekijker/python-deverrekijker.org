@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title> {{ c.INSTITUTION_NAME }} </title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="{{c.VIEWPORT_CONTENT}}" />
+
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+        <script type="text/javascript" src="/static/js/ajax.js"></script>
+        <script type="text/javascript" src="/static/js/open.js"></script>
+
+        <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/static/js/pay-now-button.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="jumbotron" id="container" style="margin-bottom:0;border-radius:0">
+
+                <header id='header' class='row'>
+
+                    <div id='header-left' class='left col-xs-8'>
+                        <h1>{{ c.INSTITUTION_NAME }}</h1>
+                        <em>
+                            Opening doors on VU Campus,
+                            <a target="_blank" href="{{c.ADVALVAS_LINK}}">
+                                since May 2015
+                            </a>
+                        </em>
+                    </div>
+
+                    <div id='header-right' class='right col-xs-4'>
+
+                        {% if maintenance %}
+                            <br> <em> Open-times tracker is under maintenance </em>
+                        {% else %}
+                            <a id='open-box' target='_blank' href='graph'>
+                                <em id='open-box-load'>loading...</em>
+                                <span id='open-text'></span>
+                            </a>
+                        {% endif %}
+                    </div>
+
+                </header>
+
+                <nav class='navbar navbar-default'>
+                    <ul class="nav navbar-nav">
+                        {% for menu_item in c.MENU_ITEMS %}
+                        <li> <a target="_blank" href="{{menu_item['link']}}"><h3>{{menu_item['name']}}</h3></a> </li>
+                        {% endfor %}
+                    </ul>
+                </nav>
+
+                <div id='txt'>
+
+                    {% include 'index_text.html' %}
+
+                    <div id="bitcoin-container" class='col-xs-12'>
+
+                        <div class="blockchain-btn" data-address="{{xbt_data_address}}" data-shared="false">
+
+                            <div class="blockchain stage-begin">
+                                <img src="https://blockchain.info/Resources/buttons/donate_64.png" />
+                            </div>
+                            <!--
+                                // what's this?
+                                <div class="blockchain stage-loading" style="text-align:center">
+                                    <img src="https://blockchain.info/Resources/loading-large.gif"/>
+                                </div>
+                            -->
+                            <div class="blockchain stage-ready">
+                                <p align="center">Bitcoin!!!111:
+                                    <br><strong>[[address]]</strong></p>
+                                <p align="center" class="qr-code"></p>
+                            </div>
+                            <div class="blockchain stage-paid">
+                                Donation of <b>[[value]] BTC</b> Received. Thank You!
+                            </div>
+                            <div class="blockchain stage-error">
+                                <span style="color: red; ">[[error]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer>
+                    <span class="right">
+                        <em>
+                            Think our website sucks?
+                            <a target="_blank" href="{{c.GITHUB_LINK}}">
+                                Help improve it!
+                            </a>
+                        </em>
+                    </span>
+                </footer>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            request_opentimes(); // load open times
+            setInterval(request_opentimes, 1000 * 60); // reload open times once per minute
+        </script>
+
+    </body>
+
+</html>
